@@ -1,31 +1,48 @@
-var timer = document.querySelector("#timer");
-var quotedisplay = document.querySelector(".quote-display");
-var quoteinput = document.querySelector(".quoteInput");
-var RANDOM_TEXT_API_URL = "https://randommer.io/api/Text/LoremIpsum?loremType=business&type=paragraphs&number=2";
+const timer      = document.querySelector("#timer");
+let quotedisplay = document.getElementById("quoteDisplay");
+let quoteinput   = document.getElementById("quoteInput");
+const RANDOM_QUOTE_API_URL = 'https://api.quotable.io/random'
+
+quoteinput.addEventListener( 'input', () => {
+
+    const arrayText = quotedisplay.querySelectorAll("span");
+    const arrayValue = quoteinput.value.split('');
+    let correct = true
+    arrayText.forEach( (characterspan, index) => {
+        const character = arrayValue[index];
+        if (character == null) {
+            characterspan.classList.remove('correct');
+            characterspan.classList.remove('incorrect');
+            correct = false;
+        } else if( character === characterspan.innerText){
+            characterspan.classList.add('correct');
+            characterspan.classList.remove('incorrect');
+        } else {
+            characterspan.classList.remove('correct');
+            characterspan.classList.add('incorrect');
+            correct = false;
+        }
+    });
+    
+    if ( correct ) renderData();
+});
+
 
 function getRandomText() {
-    return fetch(RANDOM_TEXT_API_URL,{
-        method:'GET',
-        headers:{
-            'X-Api-key':'8ae206473edb4dbbb316da5f4554cf19'
-        }
-    })
-      .then(response => response.json())
+    return fetch(RANDOM_QUOTE_API_URL)
+    .then(response => response.json())
+    .then(data => data.content)
 }
 
 async function renderData() {
-    let data = await getRandomText()
-    const demo = data.replace(/\.|"|,|'|<br>/g, '').toLowerCase();
-    const splittedData = demo.slice(0,199);
+    let splittedData = await getRandomText();
+    quotedisplay.innerHTML = '';
+    quoteinput.innerHTML = null;
     splittedData.split('').forEach( character => {
         let spanElement = document.createElement('span'); 
-        spanElement.classList.add('correct');
         spanElement.innerHTML = character;
         quotedisplay.appendChild(spanElement);
-        console.log(spanElement);
     });
-    quotedisplay.innerHTML = splittedData;
-    quoteinput.innerHTML = null;
+    quoteinput.value = null;
 }
-
 renderData();
