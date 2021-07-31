@@ -12,15 +12,15 @@ body {
 }
 
 body, .quote-input {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
   background-color: #d1d0c5;
   padding: 1rem;
   border-radius: .5rem;
-  width: auto;
-  max-width: 750px;
+  width: 950px;
+  max-width: 1000px;
   box-shadow: 2px 2px 30px 2px black;
 }
 
@@ -32,19 +32,17 @@ body, .quote-input {
   resize: none;
   font-size: 18pt;
   border-radius: .2rem;
-  caret-color: lavender;
+  color: #4D4F53;
 }
 
 .correct {
-  caret-color: lavender;
+  color:#E2B714;
 }
 
 .incorrect {
   color: #ca4754;
 }
 
-.cursor {
-  color: darkgoldenrod;
+.cursor{
+  color: #E2B714;
 }
-
-
