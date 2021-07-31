@@ -19,49 +19,32 @@ body, .quote-input {
   background-color: #d1d0c5;
   padding: 1rem;
   border-radius: .5rem;
-  width: 700px;
-  max-width: 90%;
+  width: auto;
+  max-width: 750px;
   box-shadow: 2px 2px 30px 2px black;
 }
 
-.timer {
-  position: absolute;
-  top: 2rem;
-  font-size: 3rem;
-  color: #F0DB4F;
-  font-weight: bold;
-}
-
-.quote-display {
-  margin-bottom: 1rem;
-  margin-left: calc(1rem + 2px);
-  margin-right: calc(1rem + 2px);
-  font-size: 15pt;
-  font-family: Verdana, Geneva, Tahoma, sans-serif
-}
-
 .quote-input {
-  background-color: transparent;
-  border: 2px solid #A9A9A9;
-  outline:  none;
   width: 100%;
-  height: 10rem;
+  text-align: left;
+  height: 5rem;
   margin: auto;
   resize: none;
-  padding: .6rem 1rem;
   font-size: 18pt;
   border-radius: .2rem;
-}
-
-.quote-input:focus {
-  border-color: #000000; 
+  caret-color: lavender;
 }
 
 .correct {
-  color: green;
+  caret-color: lavender;
 }
 
 .incorrect {
   color: #ca4754;
-  text-decoration: underline;
 }
+
+.cursor {
+  color: darkgoldenrod;
+}
+
+
