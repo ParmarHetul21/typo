@@ -50,7 +50,6 @@ let text = textarea.split('').map( (character) => {
     return span; 
 });
 
-
 let cursorIndex = 0;
 let firstCharacter = text[cursorIndex];
 firstCharacter.classList.add('correct');
