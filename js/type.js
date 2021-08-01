@@ -45,7 +45,7 @@ const pharagraphs = [
 const textarea = pharagraphs[parseInt(Math.random() * pharagraphs.length)];
 
 
-restart.addEventListener('click', () => window.location.reload());
+restart.addEventListener('click', () => location.reload());
 
 let text = textarea.split('').map( (character) => {
     let span = document.createElement('span');
