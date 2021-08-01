@@ -11,6 +11,7 @@ let htmlConatiner = document.getElementById('container');
 let restart = document.getElementById('btnrestart-container');
 
 
+
 //HTML Content Hidden
 htmlTime.style.display = "none";
 htmlConatiner.style.display = "none";
@@ -42,6 +43,9 @@ const pharagraphs = [
     'musician who goes on tour with his nephews band after one of their songs goes viral.'
 ];
 const textarea = pharagraphs[parseInt(Math.random() * pharagraphs.length)];
+
+
+restart.addEventListener('click', () => window.location.reload());
 
 let text = textarea.split('').map( (character) => {
     let span = document.createElement('span');
