@@ -32,7 +32,7 @@ button.addEventListener('click' ,() => {
     restart.style.display = "block";
     restart.style.marginTop = '100px' 
     button.style.display = "none";
-    interval = setInterval(countDown , 500);
+    interval = setInterval(countDown , 1000);
 })
 
 
