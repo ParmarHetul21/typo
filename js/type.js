@@ -38,9 +38,9 @@ button.addEventListener('click' ,() => {
 
 //Random Data
 const pharagraphs = [
-    'I have been impressed with the urgency of doing Knowing is not enough we must apply Being willing is not enough we must do The oldest classical Greek and Latin writing could',
-    'be written in boustrophedon The Rocker is a 2008 American comedy film directed by Peter Cattaneo and written by Maya Forbes and Wallace Wolodarsky, from a story by Ryan Jaffe',
-    'musician who goes on tour with his nephews band after one of their songs goes viral.'
+    'To develop GLS Institute of Computer Technology to be a leading player in the country.',
+    'To make it a premier class institution of academic excellence through integration of innovative teaching and learning, advancement of the knowledge base and research.', 
+    'To prepare IT and Management professionals who will provide. All this is good but you will not be offered any Job so dont be sad.'
 ];
 const textarea = pharagraphs[parseInt(Math.random() * pharagraphs.length)];
 
