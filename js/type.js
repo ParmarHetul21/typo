@@ -1,15 +1,13 @@
 let quoteinput = document.getElementById("quoteInput");   
 let result = document.querySelector("#result");
-
 let words = document.querySelector("#words");
 let characters = document.querySelector("#characters");
 let error = document.querySelector("#error");
-
 let button = document.getElementById('btn-container');
 let htmlTime = document.getElementById('time');
 let htmlConatiner = document.getElementById('container');
 let restart = document.getElementById('btnrestart-container');
-
+let pdiv = document.getElementById("addinformation");
 
 
 //HTML Content Hidden
@@ -32,6 +30,7 @@ button.addEventListener('click' ,() => {
     restart.style.display = "block";
     restart.style.marginTop = '100px' 
     button.style.display = "none";
+    pdiv.style.display = 'none';
     interval = setInterval(countDown , 1000);
 })
 
@@ -58,6 +57,7 @@ let cursorIndex = 0;
 let firstCharacter = text[cursorIndex];
 firstCharacter.classList.add('correct');
 
+
 let countDown = () => {
     if(timer < 60){
         timer++;
@@ -77,13 +77,16 @@ let countDown = () => {
 }
 
 let keydown = document.addEventListener('keydown', ( { key } ) => {
-    
+    if( key === " " ){
+        let cursorIndex = 0;
+        let firstCharacter = text[cursorIndex];
+        firstCharacter.classList.add('correct');
+    }
     if( key === "Backspace" ) {
         firstCharacter.classList.remove('cursor');
         firstCharacter = text[--cursorIndex];
         firstCharacter.classList.remove('correct','incorrect');
         firstCharacter.classList.add('cursor');
-        corret_count++;
     } else {
         if( cursorIndex >= textarea.length ) {
             clearInterval(interval);
@@ -102,12 +105,13 @@ let keydown = document.addEventListener('keydown', ( { key } ) => {
             firstCharacter = text[++cursorIndex];
             firstCharacter.classList.add('cursor');
             corret_count++;
+        } else if( key === " " ){
+            corret_count++;
         } else {
             firstCharacter.classList.add('incorrect');
             firstCharacter.classList.remove('correct');
             firstCharacter = text[++cursorIndex];
             firstCharacter.classList.add('cursor');
-            corret_count++;
         }
         document.removeEventListener('keydown', keydown)
     }

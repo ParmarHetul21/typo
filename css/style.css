@@ -126,6 +126,7 @@ body, .quote-input {
 }
 
 .button5 {
+  margin-top: 185pt;
   border-radius: 50px;
   font-family: 'Times New Roman', Times, serif;
   background-color: #e7e7e7;
@@ -149,4 +150,13 @@ body, .quote-input {
   font-family: 'Times New Roman', Times, serif;
   background-color: chartreuse;
   color: #323437;
+}
+
+.addinformation {
+  font-size: x-large;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: italic;
+  font: larger;
+  color: #e2e2e2;  
+  padding-top: 100pt;
 }
