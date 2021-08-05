@@ -15,7 +15,8 @@ body {
   position: absolute;
   color: #e2e2e2;
   font-size: xx-large;
-  top: 0;
+  top: 0%;
+  left: 9%;
 }
 
 body, .quote-input {
@@ -23,21 +24,26 @@ body, .quote-input {
 }
 
 .container {
-  background-color: #d1d0c5;
+  background-color: #e2e2e2;
   padding: 1rem;
   border-radius: .5rem;
-  width: 950px;
+  width: auto;
+  height: auto;
+  max-height: 2000px;
   max-width: 1000px;
   box-shadow: 2px 2px 30px 2px black;
 }
 
 .quote-input {
-  width: 100%;
-  text-align: left;
-  height: 5rem;
+  width: auto;
+  text-align: justify;
+  height: auto;
   margin: auto;
   resize: none;
+  max-height: fit-content;
+  max-width: max-content;
   font-size: 18pt;
+  font-style: inherit;
   border-radius: .2rem;
   color: #4D4F53;
 }
@@ -117,27 +123,22 @@ body, .quote-input {
 .button {
   border: none;
   color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
+  align-content: center;
+  padding: 15px 18px;
   font-size: 26px;
-  margin: 4px 2px;
+  margin: 10px 10px;
   cursor: pointer;
 }
 
 .button5 {
-  margin-top: 185pt;
+  
   border-radius: 50px;
-  font-family: 'Times New Roman', Times, serif;
+  align-content: center;
+  font-family: monospace;
+  font-weight: bolder;
   background-color: #e7e7e7;
   color: #ca4754;
 }
-
-
-.button5 :hover{
-  background-color: darkgreen;
-}
-
 
 .button6 {
   height: auto;
@@ -152,11 +153,48 @@ body, .quote-input {
   color: #323437;
 }
 
+
 .addinformation {
-  font-size: x-large;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-top: auto;
+  font-size: 20pt;
+  font-weight: bold;
+  text-align: center;
+  font-family: monospace;
   font-style: italic;
-  font: larger;
-  color: #e2e2e2;  
-  padding-top: 100pt;
+  color: #ca4754;  
+}
+
+.column {
+  font-size: 15pt;
+  font-family: Arial, Helvetica, sans-serif;
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+.row {
+  margin: 0 -5px;
+  margin-top: 40%;
+  display: none;
+}
+
+.row:after {
+  content: initial;
+  display: table;
+  clear: both;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
 }

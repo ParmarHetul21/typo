@@ -1,14 +1,16 @@
+let restart = document.getElementById('btnrestart-container');
+let pdisplay_text = document.getElementById('display_text');
+let htmlConatiner = document.getElementById('container');
+let characters = document.querySelector("#characters");
 let quoteinput = document.getElementById("quoteInput");   
+let button = document.getElementById('btn-container');
+let pdiv = document.getElementById("addinformation");
+let htmlTime = document.getElementById('time');
 let result = document.querySelector("#result");
 let words = document.querySelector("#words");
-let characters = document.querySelector("#characters");
 let error = document.querySelector("#error");
-let button = document.getElementById('btn-container');
-let htmlTime = document.getElementById('time');
-let htmlConatiner = document.getElementById('container');
-let restart = document.getElementById('btnrestart-container');
-let pdiv = document.getElementById("addinformation");
-
+let cursorIndex = 0;
+let firstCharacter
 
 //HTML Content Hidden
 htmlTime.style.display = "none";
@@ -24,25 +26,16 @@ let errorCounter = 0;
 let wordsCounter = '';
 let corret_count = 0;
 
-button.addEventListener('click' ,() => {
-    htmlTime.style.display = "block";
-    htmlConatiner.style.display = "block";
-    restart.style.display = "block";
-    restart.style.marginTop = '100px' 
-    button.style.display = "none";
-    pdiv.style.display = 'none';
-    interval = setInterval(countDown , 1000);
-})
-
 
 //Random Data
 const pharagraphs = [
-    'To develop GLS Institute of Computer Technology to be a leading player in the country.',
-    'To make it a premier class institution of academic excellence through integration of innovative teaching and learning, advancement of the knowledge base and research.', 
-    'To prepare IT and Management professionals who will provide. All this is good but you will not be offered any Job so dont be sad.'
+    "assistance vehicle winner church writing song guest fact bedroom affair analyst community sector entry possibility platform sympathy camera drawer moment system negotiation wedding wood election",
+    "secretary employment funeral language person manufacturer freedom sir revolution requirement story people reception beer goal movie information examination sister location apartment preference",
+    "power midnight driver food church guest week wood unit magazine orange description editor definition art dirt variation competition county philosophy speaker obligation hall replacement",
+    "combination thought river bread leadership midnight town article warning promotion application passenger reality series interaction stranger operation indication assistance newspaper bath ambition significance judgment lake session literature maintenance industry"
 ];
-const textarea = pharagraphs[parseInt(Math.random() * pharagraphs.length)];
 
+const textarea = pharagraphs[parseInt(Math.random() * pharagraphs.length)];
 
 restart.addEventListener('click', () => location.reload());
 
@@ -53,13 +46,23 @@ let text = textarea.split('').map( (character) => {
     return span; 
 });
 
-let cursorIndex = 0;
-let firstCharacter = text[cursorIndex];
-firstCharacter.classList.add('correct');
+button.addEventListener('click' ,() => {
+    htmlTime.style.display = "block";
+    htmlConatiner.style.display = "block"; 
+    button.style.display = "none";
+    pdiv.style.display = "block";
+    pdisplay_text.style.display = 'block';
+    pdisplay_text.style.fontStyle = "italic";
+    pdisplay_text.innerText = "press TAB to restart";
+    interval = setInterval(countDown , 1000);
+    cursorIndex = 0;
+    firstCharacter = text[cursorIndex];
+    firstCharacter.classList.add('correct');
+})
 
 
 let countDown = () => {
-    if(timer < 60){
+    if(timer < 10){
         timer++;
         counter.innerText = timer;
     } else {
@@ -76,8 +79,13 @@ let countDown = () => {
     }
 }
 
-let keydown = document.addEventListener('keydown', ( { key } ) => {
-    if( key === " " ){
+
+
+let keydown = document.addEventListener('keydown', ( { key,preventDefault } ) => {
+    if( key === "Tab") {
+        window.location.reload();
+    }
+    if( key === " ") {
         let cursorIndex = 0;
         let firstCharacter = text[cursorIndex];
         firstCharacter.classList.add('correct');
