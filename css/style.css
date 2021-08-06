@@ -15,16 +15,23 @@ body {
   position: absolute;
   color: #e2e2e2;
   font-size: xx-large;
+  font-family: monospace;
   top: 0%;
   left: 9%;
 }
 
+.Header a h2:hover{
+  color: #ca4754;
+  text-decoration: none;
+}
+
 body, .quote-input {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: monospace;
+  font-weight: bold;
 }
 
 .container {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   padding: 1rem;
   border-radius: .5rem;
   width: auto;
@@ -71,6 +78,9 @@ body, .quote-input {
   /* display: none; */
 }
 
+#time :hover{
+  color: #ca4754;
+}
 
 #time h2 {
   color: #e2e2e2;
@@ -79,6 +89,9 @@ body, .quote-input {
   cursor: pointer;
 }
 
+#time h2:hover{
+  color: #ca4754;
+}
 
 #time h3 { 
   color: #ca4754;
@@ -155,18 +168,24 @@ body, .quote-input {
 
 
 .addinformation {
-  margin-top: auto;
+  margin-top: 5%;
   font-size: 20pt;
   font-weight: bold;
   text-align: center;
   font-family: monospace;
   font-style: italic;
-  color: #ca4754;  
+  color: #ca4754;
+  position: relative;
+}
+
+.addinformation p{
+  position: fixed;
 }
 
 .column {
   font-size: 15pt;
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
   float: left;
   width: 25%;
   padding: 0 10px;
@@ -174,7 +193,7 @@ body, .quote-input {
 
 .row {
   margin: 0 -5px;
-  margin-top: 40%;
+  margin-top: 10%;
   display: none;
 }
 
@@ -186,7 +205,7 @@ body, .quote-input {
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
+  padding: 35px;
   text-align: center;
   background-color: #f1f1f1;
 }
