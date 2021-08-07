@@ -107,6 +107,7 @@ let keydown = document.addEventListener("keydown", ({ key }) => {
 		if (cursorIndex >= textarea.length) {
 			clearInterval(interval);
 			timer = 0;
+			row.style.display = "block";
 			var acc = Math.round((corret_count / total_count) * 100);
 			const wpm = parseInt(corret_count / 5 / 1);
 			pwpm.innerText = wpm;
