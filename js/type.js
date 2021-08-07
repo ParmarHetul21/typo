@@ -59,7 +59,6 @@ button.addEventListener("click", () => {
 	pdisplay_text.style.display = "none";
 	// pdisplay_text.style.fontStyle = "italic";
 	// pdisplay_text.innerText = "press TAB to restart";
-	interval = setInterval(countDown, 1000);
 	cursorIndex = 0;
 	firstCharacter = text[cursorIndex];
 	firstCharacter.classList.add("correct");
@@ -88,6 +87,9 @@ let countDown = () => {
 };
 
 let keydown = document.addEventListener("keydown", ({ key }) => {
+	if(!interval) {
+		interval = setInterval(countDown, 1000);
+	}
 	if (key === "Tab") {
 		window.location.reload();
 	}
