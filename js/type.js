@@ -66,7 +66,7 @@ button.addEventListener("click", () => {
 });
 
 let countDown = () => {
-	if (timer < 10) {
+	if (timer < 60) {
 		timer++;
 		counter.innerText = timer;
 	} else {
