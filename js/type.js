@@ -6,8 +6,6 @@ let quoteinput = document.getElementById("quoteInput");
 let button = document.getElementById("btn-container");
 let pdiv = document.getElementById("addinformation");
 let htmlTime = document.getElementById("time");
-// let result = document.querySelector("#result");
-// let words = document.querySelector("#words");
 
 let pwpm = document.getElementById("wpm");
 let accuracy = document.getElementById("accuracy");
@@ -30,7 +28,6 @@ let interval = null;
 
 //Variables To Store Errors , Words & Characters
 let errorCounter = 0;
-let wordsCounter = "";
 let corret_count = 0;
 
 //Random Data
@@ -57,8 +54,6 @@ button.addEventListener("click", () => {
 	button.style.display = "none";
 	pdiv.style.display = "none";
 	pdisplay_text.style.display = "none";
-	// pdisplay_text.style.fontStyle = "italic";
-	// pdisplay_text.innerText = "press TAB to restart";
 	cursorIndex = 0;
 	firstCharacter = text[cursorIndex];
 	firstCharacter.classList.add("correct");
