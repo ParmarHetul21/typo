@@ -29,13 +29,14 @@ let interval = null;
 //Variables To Store Errors , Words & Characters
 let errorCounter = 0;
 let corret_count = 0;
+var start = false;
 
 //Random Data
 const pharagraphs = [
 	"assistance vehicle winner church writing song guest fact bedroom affair analyst community sector entry possibility platform sympathy camera drawer moment system negotiation wedding wood election",
 	"secretary employment funeral language person manufacturer freedom sir revolution requirement story people reception beer goal movie information examination sister location apartment preference",
 	"power midnight driver food church guest week wood unit magazine orange description editor definition art dirt variation competition county philosophy speaker obligation hall replacement",
-	"combination thought river bread leadership midnight town article warning promotion application passenger reality series interaction stranger operation indication assistance newspaper bath ambition significance judgment lake session literature maintenance industry",
+	"combination thought river bread leadership midnight town article warning promotion application passenger reality series interaction stranger operation indication assistance newspaper bath ambition significance judgment lake session literature maintenance industry"
 ];
 
 const textarea = pharagraphs[parseInt(Math.random() * pharagraphs.length)];
@@ -57,6 +58,7 @@ button.addEventListener("click", () => {
 	cursorIndex = 0;
 	firstCharacter = text[cursorIndex];
 	firstCharacter.classList.add("correct");
+	start = true;
 });
 
 let countDown = () => {
@@ -82,8 +84,10 @@ let countDown = () => {
 };
 
 let keydown = document.addEventListener("keydown", ({ key }) => {
-	if(!interval) {
-		interval = setInterval(countDown, 1000);
+	if (start) {
+		if (!interval) {
+			interval = setInterval(countDown, 1000);
+		}
 	}
 	if (key === "Tab") {
 		window.location.reload();
@@ -127,7 +131,7 @@ let keydown = document.addEventListener("keydown", ({ key }) => {
 			firstCharacter.classList.remove("correct");
 			firstCharacter = text[++cursorIndex];
 			firstCharacter.classList.add("cursor");
-      		errorCounter += 1;	
+			errorCounter += 1;
 		}
 		document.removeEventListener("keydown", keydown);
 	}
